@@ -7,7 +7,6 @@ def calculate_basic_pay(hours,pay):
     basic_pay = hours * pay
     return basic_pay
 
-#defining overtime pay
 def calculate_overtime_pay(hours,pay):
     over_hours = hours - 40
     over_pay = pay * 1.5
@@ -25,13 +24,22 @@ def calculate_total_pay(hours,pay):
 
 def work_details():
     hours = int(input("Please enter the amount of hours you have worked this week: "))
-    pay = float(input("Please enter your normal rate of pay: "))
+    pay = float(input("Please enter your normal rate of pay in pounds: "))
     return (hours,pay)
 
-def diplay_total_pay(total_pay):
-    print
+def display_total_pay(total_pay):
+    total_print = print("The total pay you will recive this week is £{0}.".format(total_pay))
+    return total_print
+       
+
+def calculate_pay():
+    hours,pay = work_details()
+    total_pay = calculate_total_pay(hours,pay)
+    display = display_total_pay(total_pay)
+    return display
+    
     
 
 #main program
-
+calculate_pay()
     
